@@ -1,0 +1,754 @@
+$background: #002632;
+$photo-back: #011A28;
+$blue-text: #88A7B7;
+$white-text: #FFFFFF;
+$sch-button: #3D85C6;
+@mixin info-text {
+    font-size: 24px !important;    
+    font-weight: 400 !important;
+    color: $blue-text;
+}
+@mixin sec-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: $blue-text;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Sulphur Point', sans-serif !important;
+    @include info-text;
+    background-color: $background;
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
+
+    li {
+        list-style: none;
+        
+        a {
+            color: $blue-text;
+            position: relative;
+            background-image: linear-gradient(currentColor, currentColor);
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+            transition: background-size .5s ease;
+            
+            &:hover {
+                background-size: 100% 2px;
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+} 
+
+.container {
+    width: 1170px;  
+    margin: 0 auto;
+    position: relative;
+}
+
+.title {
+    font-size: 58px;
+    font-weight: 700;
+    color: $blue-text
+}
+
+.photo {            
+    position: relative;
+
+    img {
+        position: relative;
+        z-index: 1;
+    }
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: $photo-back;
+        position: absolute;
+        top: -25px;
+        left: -25px;
+        z-index: 1;
+    }
+}
+
+.header-schedule-button, .footer-schedule-button {
+    display: flex;
+    justify-content: center;
+    margin: -50px;
+    z-index: 1;
+    position: relative;        
+
+    .header-schedule-button__button, .footer-schedule-button__button {
+        background-color: $sch-button;
+        background-image: url(../img/icons/phone.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 140px;
+        height: 140px;
+        border: 1px solid transparent;
+        border-radius: 100px;
+        position: relative;        
+
+        &::before {
+            content: url(../img/icons/text.svg);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 10s infinite linear;
+        }
+    }
+
+    .header-schedule-button__text, .footer-schedule-button__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0 0 20px;
+
+        .button__main-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: $white-text;
+        }
+        .button__secondary-text {
+            @include sec-text;
+        }
+    }        
+}
+
+.schedule-button {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;    
+
+    .schedule-button__button {
+        width: 115px;
+        height: 115px;
+        border: 1px solid transparent;
+        border-radius: 100px;
+        position: relative;
+        background: url(../img/icons/phone-light.svg) center no-repeat;
+
+        &::before {
+            content: url(../img/icons/text-light.svg);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            animation: rotate 10s infinite linear;
+        }
+    }
+
+    .schedule-button__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0 0 20px;
+
+        .button__main-text {        
+            font-weight: 700;
+            font-size: 32px;
+            color: $white-text;                
+        }
+
+        .button__secondary-text {
+            @include sec-text;
+        }
+    }
+}
+
+.header {
+    background: linear-gradient(104.04deg, #011A28 0%, #011019 100%);
+    padding: 0 0 100px 0;
+
+    .header-top {
+        height: 115px;
+        display: flex;
+        align-items: center;
+
+        .logo {
+            color: $white-text;
+            font-size: 32px;
+            margin: 0 180px 0 0;
+
+            span {
+                color: #3D85C6;
+            }
+        }
+
+        .nav-bar {
+            width: 530px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    } 
+    .insta-button {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        width: 95px;
+
+        .insta {
+            width: 95px;
+            height: 124px;
+            background: #002733;            
+
+            svg {
+                margin: 35px;
+
+                &:hover {
+                    scale: 1.2;
+                    transition: 0.5s ease;
+                }
+            }
+        }
+
+        .follow-button {
+            width: 30px;
+            height: 150px;
+            display: flex;
+            background: #3D85C6;    
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 95px;
+            right: 32px;
+
+            svg {
+                &:hover {
+                    scale: 1.2;
+                    transition: 0.5s ease;
+                }
+            }
+        }
+    }
+
+    .header-main {
+        display: flex;
+        margin: 70px 0 0 0;    
+        
+        .header__photo {
+            &::before {
+                background-color: #002733;
+            }
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+
+            .header-text__main-text {
+                font-size: 64px;
+                font-weight: 700;
+                color: $white-text;
+                margin: 10px -33px 0;
+                position: relative;
+                z-index: 1;
+            }
+
+            .header-text__secondary-text {
+                width: 445px;
+                @include sec-text;
+                margin: 20px 0 20px 165px;
+
+                &:last-of-type {
+                    margin: 0 0 0 165px
+                }
+            }
+        }                
+    }    
+}
+
+.vision {
+    display: flex;
+    padding: 100px 0;
+
+    .vision_title {
+        text-align: right;
+        z-index: 2;
+        position: relative;
+    }
+
+    .vision-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .vision-info {
+            width: 425px;
+            margin: 80px 0 0 100px;
+    
+            .info__text:first-of-type {
+                margin: 0 0 30px 0;
+            }
+        }
+
+        .vision__photo {
+            margin: 10px 140px 0 0;
+
+            &::before {                
+                left: 30px;
+                top: -30px;
+                background-color: $photo-back;
+            }
+        }
+    }
+}
+
+.offer {
+    display: flex;
+    padding: 100px 0;
+    position: relative;
+
+    .offer-title {
+        position: relative;
+        z-index: 2;
+    }
+
+    .offer-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+
+        .offer-info {
+            margin: 110px 0 0 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            .white-info__text {
+                font-weight: 400;
+                font-size: 36px;
+                color: $white-text;
+                margin: 40px 0 0 0;
+            }
+        }
+
+        .offer__photo {
+            margin: 10px 0 0 50px;
+            width: 810px;
+
+            &::before {                
+                top: -30px;
+                left: -30px;
+            }
+        }
+    }
+
+    .schedule-button {
+        bottom: 190px;
+        left: 0px;
+        right: -10px;
+        justify-content: right;
+        z-index: 1;
+
+        .schedule-button__button {        
+            order: 2;
+            margin: 0 0 0 20px;
+        }
+    }
+    
+    .offer__background {
+        display: flex;
+        position: absolute;
+        top: 210px;
+        right: 0px;
+    }
+}
+
+.payment {
+    display: flex;
+    padding: 100px 0;
+    position: relative;
+
+    .payment-title {
+        text-align: right;
+        z-index: 2;
+        position: relative;
+        margin: 0 0 10px 0;
+    }
+
+    .payment-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+
+        .payment__photo {
+            width: 985px;
+            margin: 0 auto;
+            position: relative;
+
+            &::before {
+                top: -30px;                
+                left: -30px;
+                width: calc(100% + 60px);
+            }
+        }
+        .payment-info {
+            margin: 70px 0 0 0;
+            display: flex;
+            justify-content: right;
+
+            .info__text {
+                text-align: right;
+                width: 650px;
+            }
+        }
+    }
+
+    .schedule-button {
+        bottom: -10px;
+        left: 0;
+    }
+}
+
+.about-us {
+    display: flex;
+    padding: 100px 0;
+    position: relative;
+
+    .about-us-title {
+        z-index: 2;
+        position: relative;
+        margin: 0 0 10px 0;
+    }
+
+    .about-us-wrapper {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+
+        .about-us__info {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 50px;
+
+            .about-us__text {
+                width: 495px;
+                margin: 100px 0;
+
+                .about-us__main-text {
+                    font-weight: 400;
+                    font-size: 36px;
+                    color: $white-text;
+                    width: 370px;
+
+                    span {
+                        color: $blue-text;
+                    }
+                }
+
+                .info__text:first-of-type {
+                    margin: 40px 0;                                        
+                }
+            }                    
+        }
+
+        .about-us-poster {
+            display: flex;
+            flex-direction: column;
+            margin: 60px 0 100px 0;
+            position: relative;
+
+            .about-us-poster__title {
+                font-size: 90px;
+                text-align: center;
+                z-index: 2;
+                position: absolute;
+                top: 20px;
+            }
+
+            .poster__photo {
+                display: flex;
+                position: relative;
+                width: 900px;
+                margin: 0 auto;
+
+                &::before {
+                    top: 30px;
+                    left: -30px;
+                    width: calc(100% + 60px);
+                }
+            }
+
+            .footer-schedule-button {
+                display: flex;
+                flex-direction: row-reverse;
+                z-index: 1;
+                position: absolute;
+                bottom: -100px;
+                right: 0;
+                margin: 0 65px 0 0;
+
+                .footer-schedule-button__text {
+                    margin: 0 20px 0 0;
+                }
+            }
+        }
+    }
+}
+
+.calendar {
+    display: flex;
+    padding: 100px 0;
+    position: relative;
+
+    .calendar__background {
+        position: absolute;
+        top: 75px;
+        left: 0;
+    }
+
+    .calendar-title {
+        z-index: 2;
+        position: relative;
+    }
+    
+    .calendar-wrapper {
+        
+        .calendar-main {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 0 0 100px 0;
+
+            .calendar-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 485px;
+
+                .info__text {                    
+                    font-weight: 400;
+                    font-size: 36px;
+                    margin: 150px 0 0 0;
+                }
+            }
+
+            .calendar-frame {
+                width: 626px;
+                height: 757px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    background-color: $photo-back;
+                    position: absolute;
+                    top: -30px;
+                    left: -30px;
+                    z-index: 1;
+                }
+
+                .calendar-frame__widget {
+                    position: absolute;
+                    z-index: 2;                    
+                }
+            }
+        }   
+        
+        .calendar-about {
+            display: flex;
+            flex-direction: column;
+
+            .calendar-about__title {
+                font-size: 90px;
+                z-index: 1;
+                text-align: right;
+                margin: 0 0 30px 0;
+            }
+
+            .calendar-about-wrapper {
+                display: flex;
+
+                .calendar-about-photo {
+                    width: 450px;
+
+                    &::before {
+                        top: 30px;
+                        left: 30px;
+                    }
+                }
+
+                .calendar-about__text {
+                    margin: 90px 0 0 105px;                    
+                    height: 325px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .info__text {
+                        position: relative;
+
+                        &::before {
+                            content: url(../img/icons/check.svg);
+                            position: absolute;
+                            left: -55px;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
+.email {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../img/footer.png);
+    padding: 100px 0;
+    
+    .email-title {
+        font-size: 90px;
+        font-weight: 700;
+        color: $background;
+    }
+    
+    .email-text {
+        font-size: 40px;    
+        font-weight: 700;
+        color: $background;
+        width: 1000px;
+        text-align: center;
+        margin: 70px 0;
+    }
+
+    .email-send {
+        padding: 35px 50px;
+        background-color: #011a28;
+        font-size: 40px;
+        font-weight: 700;
+        color: $white-text;
+    }
+}
+
+.footer {
+    display: flex;  
+    background-color: $photo-back;  
+
+    .footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 60px 0;
+
+        .left-half {
+            display: flex;
+            flex-direction: column;
+
+            .footer-logo {
+                font-size: 32px;
+                color: $white-text;
+                margin: 0 0 20px 0;
+
+                span {
+                    color: $sch-button;
+                }
+            }
+
+            .footer-list {
+                display: flex;
+
+                img {
+                    width: 185px;
+                }
+
+                .footer-list__list {
+                    margin: 0 0 0 100px;
+                    font-size: 18px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }                            
+        }
+
+        .right-half {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .footer-schedule-button {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: unset;
+                margin: unset;
+                position: unset;
+
+                .footer-schedule-button__text {
+                    margin: 0 20px 0 0;
+                }
+            }
+
+            .email-send {                
+                font-weight: 700;
+                font-size: 20px;
+                color: $white-text;
+                text-align: right;
+
+                span {
+                    color: $blue-text;
+                    font-weight: 300;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        font-weight: 300;
+        font-size: 20px;
+        text-align: center;
+        margin: 0 0 30px 0;
+    }
+}
+
+.up-button {
+    position: fixed;
+    z-index: 99;
+    top: 50%;
+    right: 50px;
+    display: flex;
+    opacity: 0;
+    transition: 1.2s ease;
+    cursor: pointer;
+}
+
+.up-button.show {
+    opacity: 1;
+
+    &:hover {
+        scale: 1.1;
+        transition: .3s linear;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to{        
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

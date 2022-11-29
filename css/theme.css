@@ -1,0 +1,214 @@
+:root {
+    --background-color: #F2F8FD;
+    --dark-bg-color: #18333E;
+    --box-shadow: #18333E 0px 10px 36px 0px,
+        #18333E(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+:root.dark {
+    --background-color: var(--dark-bg-color);
+}
+
+:root.dark body,
+:root.dark a {
+    color: #F2F8FD;
+}
+
+:root.dark svg path,
+:root.dark svg rect {
+    fill: #F2F8FD;
+}
+
+:root.dark .burger_button svg {
+    background-color: #18333e;
+    border-radius: 50px;
+}
+
+:root.dark .burger_button_active svg path {
+    fill: #F2F8FD90;
+}
+
+:root.dark .geo_tag_icon path {
+    fill: #B4BCC4;
+    transition: .5s ease;
+}
+
+:root.dark .geo_tag:hover .geo_tag_icon path {
+    fill: #F9D44A;
+}
+
+:root.dark .slider:before {
+    background-color: #F2F8FD;
+    background-image: url(../img/icons/sun.svg);
+}
+
+:root.dark .side_bar_list li a,
+:root.dark .side_bar_list li svg path {
+    transition: .5s ease;
+}
+
+:root.dark .side_bar_list li:hover a {
+    color: #18333E;
+}
+
+:root.dark .burger_menu_active .side_bar_list li a {
+    color: #18333E;
+}
+
+:root.dark .burger_menu_active .side_bar_list svg path {
+    fill: #18333E;
+}
+
+:root.dark .side_bar_list li:hover svg path {
+    fill: #18333E;
+}
+
+:root.dark .skills_title_button,
+:root.dark .contacts_title_button,
+:root.dark .skills_title_button svg path,
+:root.dark .contacts_title_button svg path {
+    transition: .6s ease;
+}
+
+:root.dark .skills_title_button:hover,
+:root.dark .contacts_title_button:hover {
+    color: #18333E;
+}
+
+:root.dark .skills_title_button:hover svg path,
+:root.dark .contacts_title_button:hover svg path {
+    fill: #18333E;
+}
+:root.dark .meter {
+background: #a7b2c0;
+}
+
+:root.dark .day,
+:root.dark .date {
+    color: #F2F8FD;
+}
+
+:root.dark .date.dateCurrent,
+:root.dark .day.dateCurrent {
+    background-color: transparent;
+    border: 1px solid #F2F8FD;
+    color: rgb(249, 212, 74) !important;
+}
+
+:root.dark .date.dateCurrent {
+    border-top: unset;
+}
+
+:root.dark .day.dateCurrent {
+    border-bottom: unset;
+}
+
+:root.dark .day.dateCurrent::after {
+    background-color: #F2F8FD;
+}
+
+label {
+    margin: 1rem 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b1b9c3;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    bottom: -5px;
+    background-color: #18333E;
+    background-image: url(../img/icons/moon.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #b1b9c3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #b1b9c3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
+    transform: translateX(35px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+:root.dark .works::before,
+:root.dark .about::before,
+:root.dark .skills::before,
+:root.dark .contacts::before {
+    box-shadow: 0px 0px 25px 5px rgba(249,212,74,1)!important;
+}
+
+:root.dark .works_slider .slick-arrow.slick-prev {
+    background-image: url(../img/icons/arrow-l-f.svg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+:root.dark .works_slider .slick-arrow.slick-next {
+    background-image: url(../img/icons/arrow-r-f.svg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+:root.dark .skill {
+    background-color: #F2F8FD;
+}
+:root.dark .skill_img {
+    display: none;
+}
+:root.dark .skill_img_dark {
+    display: block;
+}
+:root.dark .skill_info {
+    color: #18333E;
+}
+:root.dark .footer_text {
+    color: #F9D44A;
+}
+:root.dark .text {
+    color: #F9D44A;
+/*     text-shadow: 0 3px 30px #F9D44A, 0 0 15px #F9D44A; */
+    -webkit-text-stroke: 1px #000;
+}

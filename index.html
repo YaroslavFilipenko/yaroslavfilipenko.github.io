@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/autotext.css">
+    <link rel="stylesheet" href="css/burger.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>My portfolio</title>
+</head>
+<body>
+    <header class="header">
+
+        <!-- Nav Bar -->
+
+        <nav class="navbar">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.1375 41.0256L0 50V2.5641C0 1.88406 0.263392 1.23187 0.732233 0.751008C1.20107 0.270146 1.83696 0 2.5 0H47.5C48.163 0 48.7989 0.270146 49.2678 0.751008C49.7366 1.23187 50 1.88406 50 2.5641V38.4615C50 39.1416 49.7366 39.7938 49.2678 40.2746C48.7989 40.7555 48.163 41.0256 47.5 41.0256H11.1375H11.1375ZM9.4075 35.8974H45V5.1282H5V39.4487L9.4075 35.8974H9.4075ZM12.5 17.9487H17.5C17.501 19.9881 18.2917 21.9437 19.6981 23.3854C21.1045 24.8271 23.0116 25.637 25 25.637C26.9884 25.637 28.8955 24.8271 30.3019 23.3854C31.7083 21.9437 32.499 19.9881 32.5 17.9487H37.5C37.5 21.3489 36.183 24.6099 33.8388 27.0142C31.4946 29.4185 28.3152 30.7692 25 30.7692C21.6848 30.7692 18.5054 29.4185 16.1612 27.0142C13.817 24.6099 12.5 21.3489 12.5 17.9487V17.9487Z" fill="#18333E"/>
+                </svg>
+                <p class="logo_text">Y.F.</p>
+            </div>
+            <div class="instruments">
+                <div class="theme_switcher">
+                    <label class="switch" id="switch">
+                        <input type="checkbox"><span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="geo_tag">
+                    <a href="https://www.google.com/maps/place/%D0%9B%D1%83%D1%86%D1%8C%D0%BA,+%D0%92%D0%BE%D0%BB%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C/@50.7397909,25.3340048,12z/data=!3m1!4b1!4m5!3m4!1s0x472599eba185965d:0xd25274a2228db86c!8m2!3d50.747233!4d25.325383"
+                        class="geo_tag_name" target="_blank">
+                        <svg class="geo_tag_icon" width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.695 2.37272C-0.355004 6.3909 -0.355004 10.0545 3.965 16.0818C6.26 19.1545 8.69 21.6364 9.5 21.6364C10.31 21.6364 12.74 19.1545 15.035 15.9636C17.87 11.9454 18.815 9.58181 18.275 7.45454C17.06 3.08181 13.685 0.363627 9.5 0.363627C7.475 0.363627 4.91 1.30908 3.695 2.37272ZM11.93 8.87272C11.66 10.4091 10.58 11.5909 9.5 11.5909C8.42 11.5909 7.34 10.4091 7.07 8.87272C6.665 6.86363 7.34 6.27272 9.5 6.27272C11.66 6.27272 12.335 6.86363 11.93 8.87272Z" fill="#B4BCC4" />
+                        </svg>Ukraine/Lutsk
+                    </a>
+                </div>
+                <div class="header_photo">
+                    <img src="img/header.JPEG" alt="photo">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+
+        <!-- Left sidebar -->
+
+        <aside class="side_bar">
+            <div class="side_bar_panel">
+                <ul class="side_bar_list">
+                    <li id="works">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.00991 0.0427149C8.54953 0.194938 8.63863 0.109544 4.43209 4.30866C2.2193 6.51775 0.355497 8.41125 0.284955 8.5152C0.00278606 8.93474 -0.0788944 9.57334 0.0807537 10.056C0.322082 10.7726 0.893845 11.1958 1.71436 11.2626L2.00767 11.2886L2.01881 14.3182C2.02995 17.2884 2.03366 17.3515 2.10791 17.552C2.38637 18.2872 2.85046 18.7401 3.5299 18.9406C3.70439 18.9926 3.98285 19 5.51621 19C7.2315 19 7.30576 18.9963 7.42457 18.9257C7.4914 18.8849 7.57679 18.7995 7.61763 18.7327C7.68817 18.6139 7.69188 18.5396 7.69188 16.2526C7.69188 14.6449 7.70674 13.8467 7.73272 13.7465C7.79584 13.5237 7.97034 13.2972 8.16712 13.1821L8.34162 13.0782H9.51484H10.6881L10.87 13.1896C11.0742 13.3158 11.2673 13.6017 11.3081 13.8281C11.3192 13.9061 11.3304 15.0088 11.3304 16.2823C11.3304 18.7884 11.323 18.6918 11.5346 18.8886L11.6348 18.9814L13.4207 18.9926C14.6162 19 15.2733 18.9889 15.4033 18.9629C15.9156 18.8552 16.5097 18.4022 16.7436 17.9419C17.0035 17.4221 16.9886 17.6337 17.0035 14.2997L17.0146 11.2849L17.319 11.2589C18.0653 11.1958 18.5554 10.8691 18.8635 10.2379C18.9935 9.96317 18.9972 9.95204 18.9972 9.49537C18.9972 9.03499 18.9972 9.02756 18.8561 8.73426C18.715 8.43724 18.7113 8.43352 14.6421 4.36435C10.5693 0.291469 10.5693 0.291469 10.2722 0.150385C9.99007 0.0167257 9.95295 0.00930022 9.56682 0.00187472C9.30322 -0.00555077 9.10644 0.00930022 9.00991 0.0427149Z" fill="#18333E" />
+                        </svg>
+                        <a href="#works_part">Works</a>
+                    </li>
+                    <li id="about">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 2C6.38 2 4.25 4.13 4.25 6.75C4.25 9.32 6.26 11.4 8.88 11.49C8.96 11.48 9.04 11.48 9.1 11.49C9.12 11.49 9.13 11.49 9.15 11.49C9.16 11.49 9.16 11.49 9.17 11.49C11.73 11.4 13.74 9.32 13.75 6.75C13.75 4.13 11.62 2 9 2Z" fill="#18333E" />
+                            <path d="M14.08 14.15C11.29 12.29 6.73999 12.29 3.92999 14.15C2.65999 15 1.95999 16.15 1.95999 17.38C1.95999 18.61 2.65999 19.75 3.91999 20.59C5.31999 21.53 7.15999 22 8.99999 22C10.84 22 12.68 21.53 14.08 20.59C15.34 19.74 16.04 18.6 16.04 17.36C16.03 16.13 15.34 14.99 14.08 14.15Z" fill="#18333E" />
+                            <path d="M19.99 7.33999C20.15 9.27999 18.77 10.98 16.86 11.21C16.85 11.21 16.85 11.21 16.84 11.21H16.81C16.75 11.21 16.69 11.21 16.64 11.23C15.67 11.28 14.78 10.97 14.11 10.4C15.14 9.47999 15.73 8.09999 15.61 6.59999C15.54 5.78999 15.26 5.04999 14.84 4.41999C15.22 4.22999 15.66 4.10999 16.11 4.06999C18.07 3.89999 19.82 5.35999 19.99 7.33999Z" fill="#18333E" />
+                            <path d="M21.99 16.59C21.91 17.56 21.29 18.4 20.25 18.97C19.25 19.52 17.99 19.78 16.74 19.75C17.46 19.1 17.88 18.29 17.96 17.43C18.06 16.19 17.47 15 16.29 14.05C15.62 13.52 14.84 13.1 13.99 12.79C16.2 12.15 18.98 12.58 20.69 13.96C21.61 14.7 22.08 15.63 21.99 16.59Z" fill="#18333E" />
+                        </svg>
+                        <a href="#about_part">About me</a>
+                    </li>
+                    <li id="skills">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.67 6.95C21.03 4.77999 19.22 2.97 17.05 2.33C15.4 1.85 14.26 1.89 13.47 2.48C12.52 3.19 12.41 4.47 12.41 5.38V7.87C12.41 10.33 13.53 11.58 15.73 11.58H18.6C19.5 11.58 20.79 11.47 21.5 10.52C22.11 9.74 22.16 8.6 21.67 6.95Z" fill="#18333E" />
+                            <path d="M18.91 13.36C18.65 13.06 18.27 12.89 17.88 12.89H14.3C12.54 12.89 11.11 11.46 11.11 9.7V6.12C11.11 5.73 10.94 5.35 10.64 5.09C10.35 4.83 9.94999 4.71 9.56999 4.76C7.21999 5.06 5.05999 6.35 3.64999 8.29C2.22999 10.24 1.70999 12.62 2.15999 15C2.80999 18.44 5.55999 21.19 9.00999 21.84C9.55999 21.95 10.11 22 10.66 22C12.47 22 14.22 21.44 15.71 20.35C17.65 18.94 18.94 16.78 19.24 14.43C19.29 14.04 19.17 13.65 18.91 13.36Z" fill="#18333E" />
+                        </svg>
+                        <a href="#skills_part">Skills</a>
+                    </li>
+                    <li id="contacts">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 3H7C4 3 2 4.5 2 8V15C2 18.5 4 20 7 20H10.57C11.16 20 11.64 19.48 11.56 18.89C11.46 18.18 11.48 17.44 11.63 16.68C12.16 14.08 14.3 12.01 16.92 11.58C18.23 11.37 19.48 11.55 20.58 12.03C21.25 12.32 22 11.86 22 11.13V8C22 4.5 20 3 17 3ZM17.47 8.59L14.34 11.09C13.68 11.62 12.84 11.88 12 11.88C11.16 11.88 10.31 11.62 9.66 11.09L6.53 8.59C6.21 8.33 6.16 7.86 6.41 7.53C6.67 7.21 7.14 7.15 7.46 7.41L10.59 9.91C11.35 10.52 12.64 10.52 13.4 9.91L16.53 7.41C16.85 7.15 17.33 7.2 17.58 7.53C17.84 7.86 17.79 8.33 17.47 8.59Z" fill="#18333E" />
+                            <path d="M18 13C15.24 13 13 15.23 13 18C13 20.76 15.24 23 18 23C20.77 23 23 20.76 23 18C23 15.23 20.77 13 18 13ZM20.05 17.55L19.68 17.91L17.5 20.1C17.4 20.19 17.21 20.29 17.07 20.31L16.09 20.45C15.74 20.5 15.49 20.25 15.54 19.9L15.68 18.92C15.7 18.78 15.79 18.59 15.89 18.49L18.07 16.32L18.43 15.95C18.67 15.71 18.94 15.55 19.22 15.55C19.46 15.55 19.73 15.66 20.03 15.95C20.7 16.6 20.49 17.11 20.05 17.55Z" fill="#18333E" />
+                        </svg>
+                        <a href="#contacts_part">Contacts</a>
+                    </li>
+                    <li id="cv">
+                        <a href="CV.pdf" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.6777 19.957C12.9524 20.021 12.9776 20.3808 12.71 20.47L11.13 20.99C7.16001 22.27 5.07001 21.2 3.78001 17.23L2.50001 13.28C1.22001 9.31 2.28001 7.21 6.25001 5.93L6.774 5.75647C7.17687 5.62305 7.56893 6.02711 7.45454 6.43578C7.39783 6.63836 7.34329 6.84976 7.29001 7.07L6.31001 11.26C5.21001 15.97 6.82001 18.57 11.53 19.69L12.6777 19.957Z" fill="#18333E" />
+                                <path d="M17.17 3.20999L15.5 2.81999C12.16 2.02999 10.17 2.67999 9 5.09999C8.7 5.70999 8.46 6.44999 8.26 7.29999L7.28 11.49C6.3 15.67 7.59 17.73 11.76 18.72L13.44 19.12C14.02 19.26 14.56 19.35 15.06 19.39C18.18 19.69 19.84 18.23 20.68 14.62L21.66 10.44C22.64 6.25999 21.36 4.18999 17.17 3.20999ZM15.29 13.33C15.2 13.67 14.9 13.89 14.56 13.89C14.5 13.89 14.44 13.88 14.37 13.87L11.46 13.13C11.06 13.03 10.82 12.62 10.92 12.22C11.02 11.82 11.43 11.58 11.83 11.68L14.74 12.42C15.15 12.52 15.39 12.93 15.29 13.33ZM18.22 9.94999C18.13 10.29 17.83 10.51 17.49 10.51C17.43 10.51 17.37 10.5 17.3 10.49L12.45 9.25999C12.05 9.15999 11.81 8.74999 11.91 8.34999C12.01 7.94999 12.42 7.70999 12.82 7.80999L17.67 9.03999C18.08 9.12999 18.32 9.53999 18.22 9.94999Z" fill="#18333E" />
+                            </svg>Open CV
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="burger">
+            <div class="burger_button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10C0 11.9778 0.58649 13.9112 1.6853 15.5557C2.78412 17.2002 4.3459 18.4819 6.17317 19.2388C8.00043 19.9957 10.0111 20.1937 11.9509 19.8078C13.8907 19.422 15.6725 18.4696 17.0711 17.0711C18.4696 15.6725 19.422 13.8907 19.8079 11.9509C20.1937 10.0111 19.9957 8.00042 19.2388 6.17316C18.4819 4.3459 17.2002 2.78411 15.5557 1.6853C13.9112 0.586487 11.9778 -3.8147e-06 10 -3.8147e-06C8.68678 -3.8147e-06 7.38642 0.258654 6.17317 0.7612C4.95991 1.26375 3.85752 2.00034 2.92893 2.92893C2.00035 3.85751 1.26375 4.9599 0.761205 6.17316C0.258658 7.38642 0 8.68678 0 10ZM8.29 12.29L9.59 11H4V9H9.59L8.3 7.71L9.71 6.3L13.41 10L9.71 13.71L8.29 12.29ZM16 6V14H14V6L16 6Z" fill="#18333E"/>
+                </svg>  
+           </div>
+           <div class="burger_menu">
+                <ul class="side_bar_list">
+                    <li class="list_item" id="works">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.00991 0.0427149C8.54953 0.194938 8.63863 0.109544 4.43209 4.30866C2.2193 6.51775 0.355497 8.41125 0.284955 8.5152C0.00278606 8.93474 -0.0788944 9.57334 0.0807537 10.056C0.322082 10.7726 0.893845 11.1958 1.71436 11.2626L2.00767 11.2886L2.01881 14.3182C2.02995 17.2884 2.03366 17.3515 2.10791 17.552C2.38637 18.2872 2.85046 18.7401 3.5299 18.9406C3.70439 18.9926 3.98285 19 5.51621 19C7.2315 19 7.30576 18.9963 7.42457 18.9257C7.4914 18.8849 7.57679 18.7995 7.61763 18.7327C7.68817 18.6139 7.69188 18.5396 7.69188 16.2526C7.69188 14.6449 7.70674 13.8467 7.73272 13.7465C7.79584 13.5237 7.97034 13.2972 8.16712 13.1821L8.34162 13.0782H9.51484H10.6881L10.87 13.1896C11.0742 13.3158 11.2673 13.6017 11.3081 13.8281C11.3192 13.9061 11.3304 15.0088 11.3304 16.2823C11.3304 18.7884 11.323 18.6918 11.5346 18.8886L11.6348 18.9814L13.4207 18.9926C14.6162 19 15.2733 18.9889 15.4033 18.9629C15.9156 18.8552 16.5097 18.4022 16.7436 17.9419C17.0035 17.4221 16.9886 17.6337 17.0035 14.2997L17.0146 11.2849L17.319 11.2589C18.0653 11.1958 18.5554 10.8691 18.8635 10.2379C18.9935 9.96317 18.9972 9.95204 18.9972 9.49537C18.9972 9.03499 18.9972 9.02756 18.8561 8.73426C18.715 8.43724 18.7113 8.43352 14.6421 4.36435C10.5693 0.291469 10.5693 0.291469 10.2722 0.150385C9.99007 0.0167257 9.95295 0.00930022 9.56682 0.00187472C9.30322 -0.00555077 9.10644 0.00930022 9.00991 0.0427149Z" fill="#18333E" />
+                        </svg>
+                        <a href="#works_part">Works</a>
+                    </li>
+                    <li class="list_item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 2C6.38 2 4.25 4.13 4.25 6.75C4.25 9.32 6.26 11.4 8.88 11.49C8.96 11.48 9.04 11.48 9.1 11.49C9.12 11.49 9.13 11.49 9.15 11.49C9.16 11.49 9.16 11.49 9.17 11.49C11.73 11.4 13.74 9.32 13.75 6.75C13.75 4.13 11.62 2 9 2Z" fill="#18333E" />
+                            <path d="M14.08 14.15C11.29 12.29 6.73999 12.29 3.92999 14.15C2.65999 15 1.95999 16.15 1.95999 17.38C1.95999 18.61 2.65999 19.75 3.91999 20.59C5.31999 21.53 7.15999 22 8.99999 22C10.84 22 12.68 21.53 14.08 20.59C15.34 19.74 16.04 18.6 16.04 17.36C16.03 16.13 15.34 14.99 14.08 14.15Z" fill="#18333E" />
+                            <path d="M19.99 7.33999C20.15 9.27999 18.77 10.98 16.86 11.21C16.85 11.21 16.85 11.21 16.84 11.21H16.81C16.75 11.21 16.69 11.21 16.64 11.23C15.67 11.28 14.78 10.97 14.11 10.4C15.14 9.47999 15.73 8.09999 15.61 6.59999C15.54 5.78999 15.26 5.04999 14.84 4.41999C15.22 4.22999 15.66 4.10999 16.11 4.06999C18.07 3.89999 19.82 5.35999 19.99 7.33999Z" fill="#18333E" />
+                            <path d="M21.99 16.59C21.91 17.56 21.29 18.4 20.25 18.97C19.25 19.52 17.99 19.78 16.74 19.75C17.46 19.1 17.88 18.29 17.96 17.43C18.06 16.19 17.47 15 16.29 14.05C15.62 13.52 14.84 13.1 13.99 12.79C16.2 12.15 18.98 12.58 20.69 13.96C21.61 14.7 22.08 15.63 21.99 16.59Z" fill="#18333E" />
+                        </svg>
+                        <a href="#about_part">About me</a>
+                    </li>
+                    <li class="list_item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.67 6.95C21.03 4.77999 19.22 2.97 17.05 2.33C15.4 1.85 14.26 1.89 13.47 2.48C12.52 3.19 12.41 4.47 12.41 5.38V7.87C12.41 10.33 13.53 11.58 15.73 11.58H18.6C19.5 11.58 20.79 11.47 21.5 10.52C22.11 9.74 22.16 8.6 21.67 6.95Z" fill="#18333E" />
+                            <path d="M18.91 13.36C18.65 13.06 18.27 12.89 17.88 12.89H14.3C12.54 12.89 11.11 11.46 11.11 9.7V6.12C11.11 5.73 10.94 5.35 10.64 5.09C10.35 4.83 9.94999 4.71 9.56999 4.76C7.21999 5.06 5.05999 6.35 3.64999 8.29C2.22999 10.24 1.70999 12.62 2.15999 15C2.80999 18.44 5.55999 21.19 9.00999 21.84C9.55999 21.95 10.11 22 10.66 22C12.47 22 14.22 21.44 15.71 20.35C17.65 18.94 18.94 16.78 19.24 14.43C19.29 14.04 19.17 13.65 18.91 13.36Z" fill="#18333E" />
+                        </svg>
+                        <a href="#skills_part">Skills</a>
+                    </li>
+                    <li class="list_item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 3H7C4 3 2 4.5 2 8V15C2 18.5 4 20 7 20H10.57C11.16 20 11.64 19.48 11.56 18.89C11.46 18.18 11.48 17.44 11.63 16.68C12.16 14.08 14.3 12.01 16.92 11.58C18.23 11.37 19.48 11.55 20.58 12.03C21.25 12.32 22 11.86 22 11.13V8C22 4.5 20 3 17 3ZM17.47 8.59L14.34 11.09C13.68 11.62 12.84 11.88 12 11.88C11.16 11.88 10.31 11.62 9.66 11.09L6.53 8.59C6.21 8.33 6.16 7.86 6.41 7.53C6.67 7.21 7.14 7.15 7.46 7.41L10.59 9.91C11.35 10.52 12.64 10.52 13.4 9.91L16.53 7.41C16.85 7.15 17.33 7.2 17.58 7.53C17.84 7.86 17.79 8.33 17.47 8.59Z" fill="#18333E" />
+                            <path d="M18 13C15.24 13 13 15.23 13 18C13 20.76 15.24 23 18 23C20.77 23 23 20.76 23 18C23 15.23 20.77 13 18 13ZM20.05 17.55L19.68 17.91L17.5 20.1C17.4 20.19 17.21 20.29 17.07 20.31L16.09 20.45C15.74 20.5 15.49 20.25 15.54 19.9L15.68 18.92C15.7 18.78 15.79 18.59 15.89 18.49L18.07 16.32L18.43 15.95C18.67 15.71 18.94 15.55 19.22 15.55C19.46 15.55 19.73 15.66 20.03 15.95C20.7 16.6 20.49 17.11 20.05 17.55Z" fill="#18333E" />
+                        </svg>
+                        <a href="#contacts_part">Contacts</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="CV.pdf" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.6777 19.957C12.9524 20.021 12.9776 20.3808 12.71 20.47L11.13 20.99C7.16001 22.27 5.07001 21.2 3.78001 17.23L2.50001 13.28C1.22001 9.31 2.28001 7.21 6.25001 5.93L6.774 5.75647C7.17687 5.62305 7.56893 6.02711 7.45454 6.43578C7.39783 6.63836 7.34329 6.84976 7.29001 7.07L6.31001 11.26C5.21001 15.97 6.82001 18.57 11.53 19.69L12.6777 19.957Z" fill="#18333E" />
+                                <path d="M17.17 3.20999L15.5 2.81999C12.16 2.02999 10.17 2.67999 9 5.09999C8.7 5.70999 8.46 6.44999 8.26 7.29999L7.28 11.49C6.3 15.67 7.59 17.73 11.76 18.72L13.44 19.12C14.02 19.26 14.56 19.35 15.06 19.39C18.18 19.69 19.84 18.23 20.68 14.62L21.66 10.44C22.64 6.25999 21.36 4.18999 17.17 3.20999ZM15.29 13.33C15.2 13.67 14.9 13.89 14.56 13.89C14.5 13.89 14.44 13.88 14.37 13.87L11.46 13.13C11.06 13.03 10.82 12.62 10.92 12.22C11.02 11.82 11.43 11.58 11.83 11.68L14.74 12.42C15.15 12.52 15.39 12.93 15.29 13.33ZM18.22 9.94999C18.13 10.29 17.83 10.51 17.49 10.51C17.43 10.51 17.37 10.5 17.3 10.49L12.45 9.25999C12.05 9.15999 11.81 8.74999 11.91 8.34999C12.01 7.94999 12.42 7.70999 12.82 7.80999L17.67 9.03999C18.08 9.12999 18.32 9.53999 18.22 9.94999Z" fill="#18333E" />
+                            </svg>Open CV
+                        </a>
+                    </li>
+                </ul>
+           </div>
+           <div class="overflow"></div>
+        </div>
+
+        <!-- Content block -->
+
+        <section class="content">
+            <div class="works" id="works_part">
+                <h2 class="works_title">My Works</h2>
+                <div class="works_slider">
+                    <div class="slider_item">
+                        <a href="works/Project_0-01/index.html" target="_blank"><img src="img/slider/slide01.jpg" alt="slide" class="photo"></a>
+                        <p class="slider_item_text">HTML, CSS, Swiper, Flexbox, jQuery, JavaScript, Responsive</p>
+                    </div>
+                    <div class="slider_item">
+                        <a href="works/Project_0-02/index.html" target="_blank"><img src="img/slider/slide02.jpg" alt="slide" class="photo"></a>
+                        <p class="slider_item_text">HTML, CSS, Swiper, Flexbox, jQuery, JavaScript, Responsive</p>
+                    </div>
+                    <div class="slider_item">
+                        <a href="works/Project_0-03/index.html" target="_blank"><img src="img/slider/slide03.jpg" alt="slide" class="photo"></a>
+                        <p class="slider_item_text">HTML, CSS, Swiper, Flexbox, Grid, jQuery, JavaScript, Responsive</p>
+                    </div>
+                    <div class="slider_item">
+                        <a href="works/Project_0-04/index.html" target="_blank"><img src="img/slider/slide04.jpg" alt="slide" class="photo"></a>
+                        <p class="slider_item_text">HTML, CSS, Bootstrap, Swiper, Flexbox, jQuery, JavaScript, Responsive</p>
+                    </div>
+                    <div class="slider_item">
+                        <a href="works/Project_0-05/index.html" target="_blank"><img src="img/slider/slide05.jpg" alt="slide" class="photo"></a>
+                        <p class="slider_item_text">HTML, SCSS, CSS, Grid, Flexbox, jQuery, JavaScript</p>
+                    </div>
+                    <div class="slider_item">
+                        <a href="works/Project_0-06/" target="_blank"><img src="img/slider/slide06.jpg" alt="slide" class="photo"></a>
+                        <p class="slider_item_text">HTML, SCSS, CSS, Flexbox, jQuery, JavaScript</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skills" id="skills_part">
+                <div class="skills_title">
+                    <h2 class="skills_skills_title">Skills</h2>
+                </div>
+                <div class="skill_block">
+                    <div class="skill">
+                        <img src="img/skills/html(l).svg" alt="" class="skill_img">
+                        <img src="img/skills/html.svg" alt="" class="skill_img_dark">
+                        <div class="skill_type">
+                            <div class="skill_info">
+                                <h5 class="skill_name">HTML</h5>
+                                <p class="skill_rate"><span class="skill_rate_number">85</span>%</p>
+                            </div>
+                            <div class="meter"><span data-progress="85" style="width:0;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <img src="img/skills/css(l).svg" alt="" class="skill_img">
+                        <img src="img/skills/css.svg" alt="" class="skill_img_dark">
+                        <div class="skill_type">
+                            <div class="skill_info">
+                                <h5 class="skill_name">CSS</h5>
+                                <p class="skill_rate"><span class="skill_rate_number">85</span>%</p>
+                            </div>
+                            <div class="meter"><span data-progress="85" style="width:0;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <img src="img/skills/bootstrap(l).svg" alt="" class="skill_img">
+                        <img src="img/skills/bootstrap.svg" alt="" class="skill_img_dark">
+                        <div class="skill_type">
+                            <div class="skill_info">
+                                <h5 class="skill_name">Bootstrap</h5>
+                                <p class="skill_rate"><span class="skill_rate_number">60</span>%</p>
+                            </div>
+                            <div class="meter"><span data-progress="60" style="width:0;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <img src="img/skills/js(l).svg" alt="" class="skill_img">
+                        <img src="img/skills/js.svg" alt="" class="skill_img_dark">
+                        <div class="skill_type">
+                            <div class="skill_info">
+                                <h5 class="skill_name">JavaScript</h5>
+                                <p class="skill_rate"><span class="skill_rate_number">10</span>%</p>
+                            </div>
+                            <div class="meter"><span data-progress="10" style="width:0;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill_block">
+                    <div class="skill">
+                        <img src="img/skills/jquery(l).svg" alt="" class="skill_img">
+                        <img src="img/skills/jquery.svg" alt="" class="skill_img_dark">
+                        <div class="skill_type">
+                            <div class="skill_info">
+                                <h5 class="skill_name">jQuery</h5>
+                                <p class="skill_rate"><span class="skill_rate_number">10</span>%</p>
+                            </div>
+                            <div class="meter"><span data-progress="10" style="width:0;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <img src="img/skills/sass(l).svg" alt="" class="skill_img">
+                        <img src="img/skills/sass.svg" alt="" class="skill_img_dark">
+                        <div class="skill_type">
+                            <div class="skill_info">
+                                <h5 class="skill_name">SASS</h5>
+                                <p class="skill_rate"><span class="skill_rate_number">65</span>%</p>
+                            </div>
+                            <div class="meter"><span data-progress="65" style="width:0;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <img src="img/skills/figma(l).svg" alt="" class="skill_img">
+                        <img src="img/skills/figma.svg" alt="" class="skill_img_dark">
+                        <div class="skill_type">
+                            <div class="skill_info">
+                                <h5 class="skill_name">Figma</h5>
+                                <p class="skill_rate"><span class="skill_rate_number">70</span>%</p>
+                            </div>
+                            <div class="meter"><span data-progress="70" style="width:0;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <img src="img/skills/ps(l).svg" alt="" class="skill_img">
+                        <img src="img/skills/ps.svg" alt="" class="skill_img_dark">
+                        <div class="skill_type">
+                            <div class="skill_info">
+                                <h5 class="skill_name">Photoshop</h5>
+                                <p class="skill_rate"><span class="skill_rate_number">65</span>%</p>
+                            </div>
+                            <div class="meter"><span data-progress="70" style="width:0;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar">
+                <div class="wrap">
+                    <div class="dateTimeWrapper">
+                        <table cellspacing="0" cellpadding="0" style="width:100%">
+                            <tr>
+                                <td colspan="3">
+                                    <div class="datesWrapper">
+                                        <ul class="dateHolder">
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="currentTime">
+                        <span class="hour"></span>
+                        <span class="minute"></span>
+                        <span class="meaning"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right sidebar -->
+
+        <aside class="info_bar">
+            <div class="about" id="about_part">
+                <h2 class="info_bar_title">About me</h2>
+                <img src="img/about.jpg" alt="image" class="about_me_img">
+                <h3 class="about_name">I’m Yaroslav Filipenko</h3>
+                <p class="about_text">Hi! I'am Markup Developer from Ukraine, Lutsk city. I'am 30 y.o.<br>I looking for a job and i really like to learn something new, to do something interesting. I'am learning so fast and ready to any dificulties. I'am reliable team player, positive and communicative guy.</p>
+            </div>
+            <div class="contacts" id="contacts_part">
+                <div class="contacts_title">
+                    <h2 class="contacts_contacts_title">Contact me</h2>
+                </div>
+                <div class="contacts_wrapper">
+                    <div class="contacts_block">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0ZM40.2344 34.5215C40.2344 36.4935 38.6357 38.092 36.6639 38.092H13.3361C11.3642 38.092 9.76562 36.4934 9.76562 34.5215V15.4785C9.76562 13.5065 11.3643 11.908 13.3361 11.908H36.6638C38.6357 11.908 40.2343 13.5066 40.2343 15.4785V34.5215H40.2344Z" fill="#18333E"/>
+                            <path d="M32.6624 16.2796L25 20.7035L17.3376 16.2796C16.4837 15.7866 15.3919 16.0792 14.8988 16.933C14.4059 17.7869 14.6984 18.8787 15.5522 19.3718L24.1073 24.311L24.1074 24.3108C24.3786 24.4671 24.6871 24.5494 24.9999 24.5499C25.3128 24.5495 25.6213 24.4671 25.8924 24.3108L25.8925 24.311L34.4476 19.3718C35.3015 18.8788 35.594 17.7869 35.101 16.933C34.6082 16.0792 33.5163 15.7866 32.6624 16.2796V16.2796Z" fill="#18333E"/>
+                        </svg>                         
+                        <div class="contacts_link">
+                            <h4 class="contacts_section_title">Email</h4>
+                            <a href="mailto:yarilfilipenko@gmail.com">yarilfilipenko@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contacts_block">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1_17)">
+                            <path d="M25.1001 0.100086C11.2929 0.100086 0.100098 11.2929 0.100098 25.1001C0.100098 38.9073 11.2929 50.1001 25.1001 50.1001C38.9073 50.1001 50.1001 38.9073 50.1001 25.1001C50.1001 11.2929 38.9073 0.100086 25.1001 0.100086V0.100086ZM24.8023 10.829C24.8829 10.4851 25.1957 10.3312 25.2507 10.304C25.3945 10.2329 25.5229 10.2223 25.7807 10.2001C25.7807 10.2001 26.0023 10.1856 26.1968 10.1912C32.8068 10.3684 38.5156 15.0612 39.3379 22.1701C39.3929 22.6451 39.4868 23.2068 39.514 24.3634C39.5195 24.5951 39.5234 25.0156 39.239 25.2868C39.1107 25.409 38.9634 25.4634 38.8606 25.4901C38.7179 25.4584 38.4929 25.3862 38.3201 25.1968C38.0862 24.9401 38.0734 24.6062 38.0673 24.4917C37.9979 23.2012 37.8151 21.9118 37.5184 20.6534C36.4195 15.9884 32.1845 12.3068 27.414 11.7734C26.8595 11.7112 26.3034 11.6501 25.7462 11.6245C25.3684 11.6073 24.9929 11.5373 24.8451 11.284C24.7379 11.0979 24.7907 10.8795 24.8023 10.829L24.8023 10.829ZM27.3984 15.2218C27.3862 15.2195 27.1201 15.2179 26.7834 15.1295C26.5184 15.0601 26.3118 15.0029 26.1545 14.8212C26.0057 14.649 25.9651 14.4379 25.959 14.2801C25.9929 14.1584 26.0645 13.9756 26.2295 13.8423C26.4623 13.654 26.7562 13.6651 26.8945 13.6718C30.7907 13.8662 33.0979 16.1223 33.0979 16.1223C33.2979 16.3179 34.1351 17.1545 34.8634 18.5118C35.7418 20.1484 35.9951 21.6723 36.0768 22.6056C36.0968 22.8184 36.0912 23.134 35.9445 23.4584C35.884 23.5918 35.8156 23.739 35.6551 23.8551C35.4601 23.9962 35.249 24.0067 35.1584 24.0056C35.0579 23.9679 34.9323 23.9034 34.8218 23.789C34.679 23.6412 34.6134 23.4801 34.6062 23.4134C34.4006 21.6251 34.1206 19.8784 33.0206 18.3679C31.624 16.4512 29.6462 15.6018 27.3984 15.2218V15.2218ZM32.4934 22.0173C32.4557 22.5356 32.2451 22.7268 32.1923 22.7718C32.0351 22.9045 31.8534 22.9412 31.7434 22.9534C31.6162 22.9284 31.4357 22.8718 31.289 22.7268C31.0718 22.5118 31.044 22.2162 31.0329 22.1195C30.9812 21.6712 30.6595 20.2368 29.9257 19.5751C29.4668 19.1612 28.8329 18.9429 27.9057 18.8084C27.5334 18.7545 27.1723 18.679 27.0418 18.4323C26.9423 18.244 27.0101 18.0312 27.0307 17.964C27.1829 17.4729 27.7784 17.3312 27.8256 17.3212C28.2212 17.3768 30.7495 17.7662 31.9057 19.6462C32.5312 20.6634 32.5145 21.7279 32.4934 22.0173H32.4934ZM39.4562 35.9429C38.5079 37.0979 37.5918 38.314 36.4684 39.2806C35.504 40.1101 34.2429 40.2101 32.9879 39.6973C22.6773 35.4879 15.2823 28.3312 11.0173 18.0023C10.9101 17.7434 10.8234 17.4756 10.7323 17.2106C9.93399 14.8923 10.1745 13.9918 12.0768 12.4323C12.6984 11.9223 13.364 11.4606 14.039 11.0223C15.1734 10.2856 16.4212 10.2945 17.279 11.3279C18.7045 13.0462 20.0645 14.844 21.2345 16.7423C22.1079 18.1595 21.7957 18.9618 20.514 20.029C20.2179 20.2756 19.9001 20.4968 19.6034 20.7429C18.8618 21.359 18.5484 22.0934 18.8757 23.0679C20.3095 27.3401 23.3018 30.0412 27.4729 31.4762C27.9579 31.6429 28.7157 31.2684 29.2462 30.9673C29.6423 30.7423 29.8745 30.2301 30.1812 29.8468C31.0095 28.8106 32.3495 28.3723 33.4556 29.074C35.4329 30.3284 37.3273 31.7218 39.1857 33.149C39.584 33.4551 39.6807 34.1534 39.8956 34.6251C39.7218 35.1756 39.6979 35.6484 39.4562 35.9429V35.9429Z" fill="#18333E"/>
+                            </g><defs><clipPath id="clip0_1_17"><rect width="50" height="50" fill="white"/></clipPath></defs>
+                        </svg>                            
+                        <div class="contacts_link">
+                            <h4 class="contacts_section_title">Phone</h4>
+                            <a href="tel:+380990644408">+38 (099) 06 444 08</a>
+                        </div>
+                    </div>
+                    <div class="contacts_block">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1_10)">
+                            <path d="M28.5485 22.3326C26.8821 22.3326 26.136 23.2489 25.7194 23.8922V22.5554H22.5797C22.6205 23.4403 22.5797 32.002 22.5797 32.002H25.7194V26.7252C25.7194 26.4428 25.739 26.1603 25.8222 25.9595C26.0497 25.3946 26.5659 24.8101 27.4336 24.8101C28.5697 24.8101 29.0239 25.6771 29.0239 26.9464V32.0012H32.1636H32.1644V26.5832C32.1644 23.6828 30.6149 22.3326 28.5485 22.3326V22.3326ZM25.7186 23.9252H25.6982C25.7053 23.9142 25.7132 23.904 25.7186 23.893V23.9252Z" fill="#18333E"/>
+                            <path d="M20.8412 22.5554H17.7014V32.002H20.8412V22.5554Z" fill="#18333E"/>
+                            <path d="M25 0C11.2151 0 0 11.2151 0 25C0 38.7849 11.2151 50 25 50C38.7849 50 50 38.7849 50 25C50 11.2151 38.7849 0 25 0V0ZM38.2573 36.3077C38.2573 37.3691 37.3751 38.2311 36.2845 38.2311H13.5453C12.4577 38.2311 11.5746 37.3701 11.5746 36.3077V13.3036C11.5746 12.2412 12.4577 11.3802 13.5453 11.3802H36.2845C37.3741 11.3802 38.2573 12.2422 38.2573 13.3036V36.3077Z" fill="#18333E"/>
+                            <path d="M19.2925 18.0011C18.2192 18.0011 17.5163 18.7057 17.5163 19.633C17.5163 20.5391 18.1981 21.2648 19.2509 21.2648H19.2713C20.3665 21.2648 21.0483 20.5391 21.0483 19.633C21.0271 18.7064 20.3673 18.0011 19.2925 18.0011Z" fill="#18333E"/>
+                            </g><defs><clipPath id="clip0_1_10"><rect width="50" height="50" fill="white"/></clipPath></defs>
+                        </svg>
+                        <div class="contacts_link">
+                            <h4 class="contacts_section_title">LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/yaroslav-filipenko-81bb9b250/" target="_blank">LinkedIn/YaroslavFilipenko</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <p class="about_text hided_text">Hi! I'am Markup Developer from Ukraine, Lutsk city. I'am 30 y.o. I looking for a job and i really like to learn something new, to do something interesting. I'am learning so fast and ready to any dificulties. I'am reliable team player, positive and communicative guy.</p>
+    </main>
+    <footer class="footer scroll-animate">
+        <div class="footer_text">
+            <p class="text">
+                <span class="text-letters"></span>
+                <span></span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="js/night.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/border.js"></script>
+    <script src="js/burger.js"></script>
+    <script src="js/autotext.js"></script>
+</body>
+</html>

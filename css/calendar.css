@@ -1,0 +1,94 @@
+html,
+body {
+    font-family: 'Baloo 2', cursive;
+    margin: 0;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dateTimeWrapper {
+    width: 80%;
+}
+
+.currentTime {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 10px;
+    width: 20%;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.meaning {
+    font-size: 18px;
+}
+
+.dateHolder {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.dateHolder li {
+    display: inline;
+    float: left;
+    width: 0;
+    text-align: center;
+}
+
+.dateHolder .date {
+    color: #18333E;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+
+.dateHolder .day {
+    color: #18333E;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.day.dateCurrent {
+    background-color: #18333E;
+    border-radius: 100px 100px 0 0;
+    position: relative;
+}
+
+.day.dateCurrent::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 8px;
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    transform: translateX(-50%);
+    background-color: #F9D44A;
+    border-radius: 50px;
+}
+
+.date.dateCurrent {
+    background-color: #18333E;
+    border-radius: 0 0 100px 100px;
+}
+
+.dateCurrent {
+    color: #fff !important;
+}
+
+@media (max-width: 576.98px) {
+    .currentTime {
+        width: 15%;
+    }
+}
