@@ -47,7 +47,7 @@ $('.nav-bar__item').click(function(){
 });
 
 $(document).mouseup(function (e) {
-  let container = $('.burger-menu');
+  let container = $('.header-top');
   if (container.has(e.target).length === 0) {
       $('.burger-button').removeClass('burger-button-active');
       $('.burger-menu').removeClass('burger-menu-active')
