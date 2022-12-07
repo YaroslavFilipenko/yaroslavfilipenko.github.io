@@ -17,7 +17,7 @@ $('.overflow').click(function () {
 })
 
 $('.list_item').click(function(){
-    if ($('.burger_menu').hasClass('burger_menu_active')||$('.burger_button').hasClass('.burger_button_active')||$('.overflow').hasClass('.overflow_active'));
+    if ($('.burger_menu').hasClass('burger_menu_active')||$('.burger_button').hasClass('burger_button_active')||$('.overflow').hasClass('overflow_active'));
         $('.burger_menu').removeClass('burger_menu_active');
         $('.burger_button').removeClass('burger_button_active');
         $('.overflow').removeClass('overflow_active');
