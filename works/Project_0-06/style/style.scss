@@ -1,13 +1,17 @@
+@import 'reset';
+
 $background: #002632;
 $photo-back: #011A28;
 $blue-text: #88A7B7;
 $white-text: #FFFFFF;
 $sch-button: #3D85C6;
+
 @mixin info-text {
     font-size: 24px !important;    
     font-weight: 400 !important;
     color: $blue-text;
 }
+
 @mixin sec-text {
     font-size: 18px;
     font-weight: 700;
@@ -17,6 +21,10 @@ $sch-button: #3D85C6;
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+
+    &.blocked {
+        overflow: hidden;
+    }
 }
 
 body {
@@ -24,6 +32,8 @@ body {
     @include info-text;
     background-color: $background;
     box-sizing: border-box;
+    overflow-x: hidden;
+
 }
 
 ul {
@@ -42,8 +52,20 @@ ul {
             transition: background-size .5s ease;
             
             &:hover {
-                background-size: 100% 2px;
-            }
+                background-size: 100% 2px;            
+            }            
+        }
+        
+        &:last-of-type {
+
+            a {
+                background-image: none;
+            } 
+
+            &:hover {
+                transform: scale(1.25);
+                transition: .5s ease; 
+            }     
         }
     }
 }
@@ -176,17 +198,23 @@ a {
 
 .header {
     background: linear-gradient(104.04deg, #011A28 0%, #011019 100%);
-    padding: 0 0 100px 0;
+    padding: 100px 0;
 
-    .header-top {
-        height: 115px;
+    .header-top {        
+        height: 100px;
         display: flex;
+        width: -webkit-fill-available;
+        position: fixed;
         align-items: center;
+        top: 0;
+        left: 0%;
+        padding: 0 120px;
+        z-index: 99;
+        background: linear-gradient(104.04deg, #011A28 0%, #011019 100%);
 
         .logo {
             color: $white-text;
             font-size: 32px;
-            margin: 0 180px 0 0;
 
             span {
                 color: #3D85C6;
@@ -199,13 +227,110 @@ a {
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            margin: 0 0 0 180px;
         }
-    } 
+
+        .burger-button {
+            display: none;
+            position: relative;
+            width: 30px;
+            height: 15px;
+            z-index: 99;
+            cursor: pointer;
+        
+            span {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                border-radius: 20px;
+                background-color: #3D85C6;
+                transition: 0.4s ease;
+        
+                &:nth-child(1) {
+                    top: 0;
+                }
+        
+                &:nth-child(2) {
+                    top: 50%;
+                }
+        
+                &:nth-child(3) {
+                    top: 100%;
+                }
+            }
+        }
+        
+        .burger-button-active {
+            display: block;
+
+            span {
+    
+                &:nth-child(1) {
+                    top: 50%;
+                    transform: rotate(45deg);
+                }
+    
+                &:nth-child(2) {
+                    display: none;
+                }
+    
+                &:nth-child(3) {
+                    top: 50%;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        
+        .burger-menu {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 60px;
+            top: 100px;
+            right: 0;
+            background-color: $sch-button;
+            transform: translateX(100%);
+            transition: .5s;
+            z-index: 2;
+            
+            .nav-bar {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                margin: 0;
+                width: 100%;                
+
+                li {
+                    width: 100%;
+                    text-align: center;
+
+                    a {
+                        color: $white-text !important;
+                    }
+
+                    svg {
+
+                        path {
+                            fill: $white-text;
+                        }
+                    }
+                }
+            }
+        }       
+        
+        .burger-menu-active {
+            display: flex;
+            transform: translateX(0);            
+        }
+    }
+
     .insta-button {
         position: absolute;
-        top: 40px;
+        top: -130px;
         right: 0;
         width: 95px;
+        z-index: 99;
 
         .insta {
             width: 95px;
@@ -234,6 +359,7 @@ a {
             right: 32px;
 
             svg {
+
                 &:hover {
                     scale: 1.2;
                     transition: 0.5s ease;
@@ -247,6 +373,7 @@ a {
         margin: 70px 0 0 0;    
         
         .header__photo {
+
             &::before {
                 background-color: #002733;
             }
@@ -275,7 +402,7 @@ a {
                 }
             }
         }                
-    }    
+    }
 }
 
 .vision {
@@ -727,7 +854,7 @@ a {
 .up-button {
     position: fixed;
     z-index: 99;
-    top: 50%;
+    top: 85%;
     right: 50px;
     display: flex;
     opacity: 0;
@@ -752,3 +879,5 @@ a {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+@import 'responsive';

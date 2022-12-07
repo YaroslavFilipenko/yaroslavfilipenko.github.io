@@ -1,6 +1,64 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+html.blocked {
+  overflow: hidden;
 }
 
 body {
@@ -10,6 +68,7 @@ body {
   color: #88A7B7;
   background-color: #002632;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 ul {
@@ -29,6 +88,13 @@ ul li a {
 }
 ul li a:hover {
   background-size: 100% 2px;
+}
+ul li:last-of-type a {
+  background-image: none;
+}
+ul li:last-of-type:hover {
+  transform: scale(1.25);
+  transition: 0.5s ease;
 }
 
 a {
@@ -152,17 +218,23 @@ a {
 
 .header {
   background: linear-gradient(104.04deg, #011A28 0%, #011019 100%);
-  padding: 0 0 100px 0;
+  padding: 100px 0;
 }
 .header .header-top {
-  height: 115px;
+  height: 100px;
   display: flex;
+  width: -webkit-fill-available;
+  position: fixed;
   align-items: center;
+  top: 0;
+  left: 0%;
+  padding: 0 120px;
+  z-index: 99;
+  background: linear-gradient(104.04deg, #011A28 0%, #011019 100%);
 }
 .header .header-top .logo {
   color: #FFFFFF;
   font-size: 32px;
-  margin: 0 180px 0 0;
 }
 .header .header-top .logo span {
   color: #3D85C6;
@@ -173,12 +245,87 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin: 0 0 0 180px;
+}
+.header .header-top .burger-button {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 15px;
+  z-index: 99;
+  cursor: pointer;
+}
+.header .header-top .burger-button span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 20px;
+  background-color: #3D85C6;
+  transition: 0.4s ease;
+}
+.header .header-top .burger-button span:nth-child(1) {
+  top: 0;
+}
+.header .header-top .burger-button span:nth-child(2) {
+  top: 50%;
+}
+.header .header-top .burger-button span:nth-child(3) {
+  top: 100%;
+}
+.header .header-top .burger-button-active {
+  display: block;
+}
+.header .header-top .burger-button-active span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+.header .header-top .burger-button-active span:nth-child(2) {
+  display: none;
+}
+.header .header-top .burger-button-active span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+.header .header-top .burger-menu {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 100px;
+  right: 0;
+  background-color: #3D85C6;
+  transform: translateX(100%);
+  transition: 0.5s;
+  z-index: 2;
+}
+.header .header-top .burger-menu .nav-bar {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0;
+  width: 100%;
+}
+.header .header-top .burger-menu .nav-bar li {
+  width: 100%;
+  text-align: center;
+}
+.header .header-top .burger-menu .nav-bar li a {
+  color: #FFFFFF !important;
+}
+.header .header-top .burger-menu .nav-bar li svg path {
+  fill: #FFFFFF;
+}
+.header .header-top .burger-menu-active {
+  display: flex;
+  transform: translateX(0);
 }
 .header .insta-button {
   position: absolute;
-  top: 40px;
+  top: -130px;
   right: 0;
   width: 95px;
+  z-index: 99;
 }
 .header .insta-button .insta {
   width: 95px;
@@ -618,7 +765,7 @@ a {
 .up-button {
   position: fixed;
   z-index: 99;
-  top: 50%;
+  top: 85%;
   right: 50px;
   display: flex;
   opacity: 0;
@@ -640,6 +787,764 @@ a {
   }
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* Responsive */
+/* ≥ 1400px */
+@media (max-width: 2560px) {
+  .container {
+    width: 1140px;
+  }
+  .header .header-top {
+    justify-content: center;
+    padding: 0;
+  }
+  .header .header-top .nav-bar {
+    margin: 0 180px;
+  }
+}
+/* ≥ 1200px */
+@media (max-width: 1400px) {
+  .container {
+    width: 1140px;
+  }
+}
+/* ≥ 992px */
+@media (max-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+  .header .header-top {
+    padding: 0 50px;
+    justify-content: space-between;
+  }
+  .header .header-top .nav-bar {
+    margin: 0;
+    width: 60%;
+    font-size: 1.5rem;
+  }
+  .header .insta-button {
+    display: none;
+  }
+  .header .header-main .header__photo {
+    margin-left: 50px;
+  }
+  .header .header-main .header-text .header-text__main-text {
+    font-size: 54px;
+  }
+  .header .header-main .header-text .header-text__secondary-text {
+    margin-left: 70px;
+  }
+  .header .header-main .header-text .header-text__secondary-text:last-of-type {
+    margin-left: 70px;
+  }
+  .vision .vision-wrapper .vision-info {
+    margin-left: 0;
+  }
+  .vision .vision-wrapper .vision__photo {
+    margin-right: 0;
+  }
+  .payment .payment-wrapper .payment-info .info__text {
+    width: 400px;
+  }
+  .payment .payment-wrapper .payment__photo {
+    width: 850px;
+  }
+  .payment .payment-wrapper .payment__photo img {
+    width: 850px;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__photo {
+    width: 400px;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__photo img {
+    width: 400px;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__text {
+    width: 400px;
+    margin: 50px 0;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__text .info__text {
+    font-size: 20px;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-info {
+    width: 400px;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-info .info__text {
+    font-size: 28px;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-frame {
+    width: 500px;
+    height: 500px;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-frame iframe {
+    width: 500px;
+    height: 500px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about__title {
+    text-align: center;
+  }
+  .email .email-title {
+    font-size: 80px;
+  }
+  .email .email-text {
+    font-size: 30px;
+    width: 900px;
+  }
+  .email .email-send {
+    font-size: 30px;
+    padding: 25px 30px;
+  }
+}
+/* ≥ 768px */
+@media (max-width: 992px) {
+  .container {
+    width: 720px;
+  }
+  .title {
+    font-size: 50px;
+  }
+  .schedule-button .schedule-button__text .button__main-text {
+    font-size: 28px;
+  }
+  .schedule-button .schedule-button__text .button__secondary-text {
+    font-size: 16px;
+  }
+  .info__text {
+    font-size: 18px;
+  }
+  .header .header-top {
+    justify-content: space-between;
+  }
+  .header .header-top .nav-bar {
+    display: none;
+  }
+  .header .header-top .burger-button {
+    display: block;
+  }
+  .header .header-top .burger-menu {
+    display: flex;
+  }
+  .header .header-top .burger-menu .nav-bar {
+    display: flex;
+    font-size: 1.2rem;
+  }
+  .header .insta-button {
+    display: none;
+  }
+  .header .header-main {
+    justify-content: center;
+  }
+  .header .header-main .header__photo {
+    width: 300px;
+    margin-left: 0;
+  }
+  .header .header-main .header__photo img {
+    width: 300px;
+  }
+  .header .header-main .header-text .header-text__main-text {
+    font-size: 40px;
+  }
+  .header .header-main .header-text .header-text__secondary-text {
+    margin-left: 50px;
+    font-size: 18px;
+    width: 300px;
+  }
+  .header .header-main .header-text .header-text__secondary-text:last-of-type {
+    margin-left: 50px;
+  }
+  .header .header-schedule-button {
+    margin: -20px;
+  }
+  .header .header-schedule-button .header-schedule-button__button {
+    width: 120px;
+    height: 120px;
+  }
+  .header .header-schedule-button .header-schedule-button__text .button__main-text {
+    font-size: 28px;
+  }
+  .header .header-schedule-button .header-schedule-button__text .button__secondary-text {
+    font-size: 16px;
+  }
+  .vision {
+    justify-content: center;
+    padding: 50px 0;
+  }
+  .vision .vision-wrapper .vision-info {
+    margin-left: 30px;
+    width: 300px;
+  }
+  .vision .vision-wrapper .vision__photo {
+    margin-right: 30px;
+    width: 350px;
+  }
+  .vision .vision-wrapper .vision__photo img {
+    width: 350px;
+  }
+  .vision .vision-wrapper .vision__photo::before {
+    left: 25px;
+    top: -25px;
+  }
+  .vision .schedule-button {
+    bottom: -100px;
+  }
+  .offer {
+    padding: 100px 0 50px 0;
+  }
+  .offer img {
+    width: 65%;
+  }
+  .offer .offer-wrapper {
+    align-items: center;
+  }
+  .offer .offer-wrapper .offer-info {
+    width: 650px;
+  }
+  .offer .offer-wrapper .offer-info .info__text {
+    font-size: 16px;
+  }
+  .offer .offer-wrapper .offer-info .white-info__text {
+    font-size: 28px;
+  }
+  .offer .offer-wrapper .offer__photo {
+    width: 650px;
+    margin: 10px 0 50px 0;
+  }
+  .offer .offer-wrapper .offer__photo img {
+    width: 650px;
+  }
+  .offer .offer-wrapper .offer__photo::before {
+    top: -25px;
+    left: -25px;
+  }
+  .offer .schedule-button {
+    bottom: 140px;
+  }
+  .payment {
+    padding: 50px 0;
+  }
+  .payment .payment-wrapper .payment__photo {
+    width: 650px;
+  }
+  .payment .payment-wrapper .payment__photo img {
+    width: 650px;
+  }
+  .payment .payment-wrapper .payment__photo::before {
+    top: -25px;
+    left: -25px;
+    width: calc(100% + 50px);
+  }
+  .payment .payment-wrapper .payment-info {
+    margin-top: 80px;
+  }
+  .payment .payment-wrapper .payment-info .info__text {
+    width: 300px;
+  }
+  .payment .schedule-button {
+    bottom: -25px;
+  }
+  .about-us {
+    padding: 50px 0;
+  }
+  .about-us .about-us-wrapper .about-us__info {
+    margin: 0 25px;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__photo {
+    width: 350px;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__photo img {
+    width: 350px;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__text {
+    width: 300px;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__text .about-us__main-text {
+    width: 300px;
+    font-size: 24px;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__text .info__text {
+    font-size: 16px;
+  }
+  .about-us .about-us-wrapper .about-us-poster {
+    align-items: center;
+  }
+  .about-us .about-us-wrapper .about-us-poster .about-us-poster__title {
+    font-size: 70px;
+    top: -20px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .poster__photo {
+    width: 650px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .poster__photo img {
+    width: 650px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .poster__photo::before {
+    top: 25px;
+    left: -25px;
+    width: calc(100% + 50px);
+  }
+  .about-us .about-us-wrapper .about-us-poster .header-schedule-button {
+    bottom: -120px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .header-schedule-button .header-schedule-button__button {
+    width: 120px;
+    height: 120px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .header-schedule-button .header-schedule-button__text .button__main-text {
+    font-size: 28px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .header-schedule-button .header-schedule-button__text .button__secondary-text {
+    font-size: 16px;
+  }
+  .calendar {
+    padding: 50px 0 100px 0;
+  }
+  .calendar .calendar-title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .calendar .calendar-wrapper .calendar-main {
+    margin-bottom: 150px;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-info {
+    width: 300px;
+    align-self: center;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-info .info__text {
+    margin: 0;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-info .schedule-button {
+    bottom: -100px;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-frame {
+    width: 380px;
+    height: 400px;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-frame iframe {
+    width: 380px;
+    height: 400px;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-frame::before {
+    top: -25px;
+    left: -25px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about__title {
+    font-size: 70px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about-photo {
+    width: 400px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about-photo img {
+    width: 400px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about-photo::before {
+    top: 25px;
+    left: 25px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about__text {
+    margin: 0 0 0 90px;
+    align-self: center;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about__text .info__text {
+    font-size: 16px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about__text .info__text br {
+    display: none;
+  }
+  .email {
+    padding: 50px 0;
+  }
+  .email .email-title {
+    font-size: 60px;
+    text-align: center;
+    z-index: 1;
+  }
+  .email .email-text {
+    font-size: 28px;
+    z-index: 1;
+    width: 700px;
+  }
+  .email .email-send {
+    padding: 25px 35px;
+    font-size: 26px;
+    z-index: 1;
+  }
+  .footer {
+    padding: 50px 0 0 0;
+  }
+  .footer .footer-wrapper {
+    margin: 0;
+  }
+  .footer .footer-wrapper .left-half .footer-list .footer-list__list {
+    margin-left: 30px;
+    font-size: 16px;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button {
+    flex-direction: column-reverse;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button .footer-schedule-button__button {
+    width: 120px;
+    height: 120px;
+    margin-top: 20px;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button .footer-schedule-button__text {
+    margin: 0;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button .footer-schedule-button__text .button__main-text {
+    font-size: 28px;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button .footer-schedule-button__text .button__secondary-text {
+    font-size: 16px;
+  }
+  .footer .footer-wrapper .right-half .email-send {
+    font-size: 18px;
+    text-align: left;
+  }
+  .footer .copyright {
+    margin: 30px 0;
+  }
+}
+/* ≥ 576px */
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+  .title {
+    text-align: center !important;
+    margin-bottom: 50px !important;
+  }
+  .info__text {
+    width: 90vw !important;
+  }
+  .header {
+    padding-bottom: 150px;
+  }
+  .header .header-top .burger-menu .nav-bar {
+    font-size: 0.9rem;
+  }
+  .header .header-main {
+    align-items: center;
+    flex-direction: column;
+  }
+  .header .header-main .header__photo {
+    order: 2;
+    top: 50px;
+    margin-bottom: 25px;
+  }
+  .header .header-main .header-text .header-text__main-text {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-size: 44px;
+  }
+  .header .header-main .header-text .header-text__main-text br {
+    display: none;
+  }
+  .header .header-main .header-text .header-text__secondary-text {
+    margin: 0 auto;
+    width: 90vw;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .header .header-main .header-text .header-text__secondary-text:first-of-type {
+    margin-bottom: 20px;
+  }
+  .header .header-main .header-text .header-text__secondary-text:last-of-type {
+    margin: 0 auto;
+    bottom: 20px;
+  }
+  .header .header-schedule-button {
+    bottom: -150px;
+    margin: 50px 0;
+  }
+  .vision {
+    padding: 40px 0 80px 0;
+  }
+  .vision .vision-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .vision .vision-wrapper .vision-info {
+    text-align: center;
+    width: 90vw;
+    margin: 30px 0 0 0;
+  }
+  .vision .vision-wrapper .vision__photo {
+    margin: 0 auto;
+  }
+  .vision .schedule-button {
+    bottom: -120px;
+  }
+  .offer {
+    padding: 100px 0;
+  }
+  .offer .offer-wrapper {
+    flex-direction: column;
+  }
+  .offer .offer-wrapper .offer__photo {
+    order: 1;
+    margin: 0 auto;
+    width: 90vw;
+  }
+  .offer .offer-wrapper .offer__photo img {
+    width: 90vw;
+  }
+  .offer .offer-wrapper .offer-info {
+    order: 2;
+    margin: 50px 0 0 0;
+    width: 90vw;
+  }
+  .offer .schedule-button {
+    bottom: -120px;
+  }
+  .payment {
+    padding: 80px 0 100px 0;
+  }
+  .payment .payment-wrapper .payment-info {
+    margin-top: 50px;
+    justify-content: center;
+  }
+  .payment .payment-wrapper .payment__photo {
+    width: 90vw;
+  }
+  .payment .payment-wrapper .payment__photo img {
+    width: 90vw;
+  }
+  .payment .schedule-button {
+    bottom: -120px;
+  }
+  .about-us .about-us-wrapper .about-us__info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__text {
+    text-align: center;
+    justify-content: center;
+    width: 90vw;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__text .about-us__main-text {
+    width: 100%;
+  }
+  .about-us .about-us-wrapper .about-us__info .about-us__text .info__text br {
+    display: none;
+  }
+  .about-us .about-us-wrapper .about-us-poster .about-us-poster__title {
+    top: -70px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .poster__photo {
+    width: 90vw;
+  }
+  .about-us .about-us-wrapper .about-us-poster .poster__photo img {
+    width: 90vw;
+  }
+  .about-us .about-us-wrapper .about-us-poster .footer-schedule-button {
+    bottom: -150px;
+  }
+  .calendar {
+    padding: 80px 0;
+  }
+  .calendar .calendar-title {
+    font-size: 58px;
+  }
+  .calendar .calendar-wrapper .calendar-main {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-frame {
+    width: 90vw;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-frame iframe {
+    width: 90vw;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-info {
+    width: 90vw;
+    text-align: center;
+  }
+  .calendar .calendar-wrapper .calendar-main .calendar-info .info__text {
+    margin: 50px 0;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about__title {
+    margin: 0 auto;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about-photo {
+    margin: 0;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about__text {
+    margin: 50px 0 0 0;
+    height: 250px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about__text .info__text {
+    margin-left: 50px;
+    width: 70vw !important;
+  }
+  .email .email-title {
+    font-size: 48px;
+    margin: 0 !important;
+  }
+  .email .email-text {
+    width: 90vw;
+    margin: 50px 0;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button {
+    align-items: flex-end;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button .footer-schedule-button__text {
+    margin: 0;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button .footer-schedule-button__text .button__main-text {
+    font-size: 20px;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button .footer-schedule-button__text .button__secondary-text {
+    font-size: 12px;
+  }
+  .footer .footer-wrapper .right-half .email-send {
+    text-align: right;
+  }
+  .footer .copyright {
+    font-size: 15px;
+  }
+  .up-button {
+    top: 90%;
+    right: 25px;
+  }
+}
+/* < 576px */
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+  .schedule-button {
+    width: 330px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .schedule-button .schedule-button__text .button__main-text {
+    font-size: 20px;
+  }
+  .schedule-button .schedule-button__text .button__secondary-text {
+    font-size: 12px;
+  }
+  .photo {
+    width: 80vw !important;
+  }
+  .photo img {
+    width: 80vw !important;
+  }
+  .title {
+    font-size: 38px;
+  }
+  .header .header-main {
+    margin: 50px 0 0 0;
+  }
+  .header .header-main .header__photo {
+    width: 250px;
+  }
+  .header .header-main .header__photo img {
+    width: 250px;
+  }
+  .header .header-main .header-text .header-text__main-text {
+    font-size: 36px;
+  }
+  .header .header-main .header-text .header-text__main-text br {
+    display: none;
+  }
+  .header .header-schedule-button .header-schedule-button__text .button__main-text {
+    font-size: 20px;
+  }
+  .header .header-schedule-button .header-schedule-button__text .button__secondary-text {
+    font-size: 12px;
+  }
+  .vision .vision-wrapper .vision__photo {
+    width: 270px;
+  }
+  .vision .vision-wrapper .vision__photo img {
+    width: 270px;
+  }
+  .vision .vision-wrapper .vision-info {
+    width: auto;
+  }
+  .vision .schedule-button {
+    bottom: -150px;
+  }
+  .offer .offer-wrapper .offer-info .info__text br {
+    display: none;
+  }
+  .offer .schedule-button {
+    bottom: -150px;
+  }
+  .offer .schedule-button .schedule-button__text {
+    margin-left: 0;
+  }
+  .about-us .about-us-wrapper .about-us-poster .about-us-poster__title {
+    font-size: 45px;
+    top: -50px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .footer-schedule-button {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    bottom: -180px;
+    justify-content: space-between;
+  }
+  .about-us .about-us-wrapper .about-us-poster .footer-schedule-button .footer-schedule-button__text {
+    margin: 0;
+  }
+  .about-us .about-us-wrapper .about-us-poster .footer-schedule-button .footer-schedule-button__text .button__main-text {
+    font-size: 20px;
+  }
+  .about-us .about-us-wrapper .about-us-poster .footer-schedule-button .footer-schedule-button__text .button__secondary-text {
+    font-size: 12px;
+  }
+  .calendar .calendar-title {
+    font-size: 46px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about__title {
+    font-size: 46px;
+  }
+  .calendar .calendar-wrapper .calendar-about .calendar-about-wrapper .calendar-about__text {
+    height: 300px;
+  }
+  .email .email-title {
+    font-size: 40px;
+  }
+  .email .email-text {
+    font-size: 20px;
+    word-spacing: -2px;
+    width: 95vw;
+    margin: 25px 0;
+  }
+  .email .email-send {
+    padding: 20px 25px;
+    font-size: 20px;
+  }
+  .footer .footer-wrapper {
+    flex-direction: column;
+  }
+  .footer .footer-wrapper .left-half {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .footer .footer-wrapper .right-half {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button {
+    width: 330px;
+    align-items: center;
+  }
+  .footer .footer-wrapper .right-half .footer-schedule-button .footer-schedule-button__text {
+    text-align: center;
+  }
+  .footer .footer-wrapper .right-half .email-send {
+    margin-top: 20px;
   }
 }
 
