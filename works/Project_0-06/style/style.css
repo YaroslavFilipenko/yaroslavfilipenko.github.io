@@ -217,6 +217,7 @@ a {
   height: 100px;
   display: flex;
   width: -webkit-fill-available;
+  width: -moz-available;
   position: fixed;
   align-items: center;
   top: 0;
