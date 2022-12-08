@@ -236,6 +236,21 @@
                 .nav-bar {
                     display: flex;
                     font-size: 1.2rem;
+
+                    .nav-bar__item {
+
+                        &:last-of-type {
+
+                            a {
+                                background-image: none;
+                            } 
+                
+                            &:hover {
+                                transform: scale(1.25);
+                                transition: .5s ease; 
+                            }     
+                        }
+                    }                    
                 }
             }
         }

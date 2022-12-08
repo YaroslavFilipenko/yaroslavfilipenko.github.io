@@ -54,19 +54,7 @@ ul {
             &:hover {
                 background-size: 100% 2px;            
             }            
-        }
-        
-        &:last-of-type {
-
-            a {
-                background-image: none;
-            } 
-
-            &:hover {
-                transform: scale(1.25);
-                transition: .5s ease; 
-            }     
-        }
+        }        
     }
 }
 

@@ -46,6 +46,8 @@ $('.nav-bar__item').click(function(){
   $('html').removeClass('blocked');
 });
 
+// click over container
+
 $(document).mouseup(function (e) {
   let container = $('.header-top');
   if (container.has(e.target).length === 0) {

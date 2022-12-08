@@ -89,13 +89,6 @@ ul li a {
 ul li a:hover {
   background-size: 100% 2px;
 }
-ul li:last-of-type a {
-  background-image: none;
-}
-ul li:last-of-type:hover {
-  transform: scale(1.25);
-  transition: 0.5s ease;
-}
 
 a {
   text-decoration: none;
@@ -927,6 +920,13 @@ a {
   .header .header-top .burger-menu .nav-bar {
     display: flex;
     font-size: 1.2rem;
+  }
+  .header .header-top .burger-menu .nav-bar .nav-bar__item:last-of-type a {
+    background-image: none;
+  }
+  .header .header-top .burger-menu .nav-bar .nav-bar__item:last-of-type:hover {
+    transform: scale(1.25);
+    transition: 0.5s ease;
   }
   .header .insta-button {
     display: none;
