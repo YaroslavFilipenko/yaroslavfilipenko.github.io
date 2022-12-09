@@ -1207,7 +1207,7 @@ a {
 /* ≥ 576px */
 @media (max-width: 768px) {
   .container {
-    max-width: 540px;
+    width: 540px;
   }
   .title {
     text-align: center !important;
